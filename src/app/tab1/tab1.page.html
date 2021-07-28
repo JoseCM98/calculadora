@@ -1,17 +1,55 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Estandar
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-input disabled='true' [value]='numeroConcatenar'></ion-input>
+      </ion-col>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    </ion-row>
+    <ion-row>
+      <ion-col><ion-button expand="full" color="medium" (click)='otrasOperaciones("%")'>%</ion-button></ion-col>
+      <ion-col><ion-button expand="full" color="medium" (click)='borrar("CE")'>CE</ion-button></ion-col>
+      <ion-col><ion-button expand="full" color="medium" (click)='borrar("C")'>C</ion-button></ion-col>
+      <ion-col><ion-button expand="full" color="medium" (click)='borrar("del")'>DEL</ion-button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><ion-button expand="full" color="medium" (click)='otrasOperaciones("1/x")'>1/x</ion-button></ion-col>
+      <ion-col><ion-button expand="full" color="medium" (click)='otrasOperaciones("x2")'>x2</ion-button></ion-col>
+      <ion-col><ion-button expand="full" color="medium" (click)='otrasOperaciones("sqrt")'>SQRT</ion-button></ion-col>
+      <ion-col><ion-button expand="full" color="medium" (click)='generarOperacion("/")'>/</ion-button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><ion-button expand="full" color="medium" (click)='concatenarNumero("7")'>7</ion-button></ion-col>
+      <ion-col><ion-button expand="full" color="medium" (click)='concatenarNumero("8")'>8</ion-button></ion-col>
+      <ion-col><ion-button expand="full" color="medium" (click)='concatenarNumero("9")'>9</ion-button></ion-col>
+      <ion-col><ion-button expand="full" color="medium" (click)='generarOperacion("x")'>x</ion-button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><ion-button expand="full" color="medium" (click)='concatenarNumero("4")'>4</ion-button></ion-col>
+      <ion-col><ion-button expand="full" color="medium" (click)='concatenarNumero("5")'>5</ion-button></ion-col>
+      <ion-col><ion-button expand="full" color="medium" (click)='concatenarNumero("6")'>6</ion-button></ion-col>
+      <ion-col><ion-button expand="full" color="medium" (click)='generarOperacion("-")'>-</ion-button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><ion-button expand="full" color="medium" (click)='concatenarNumero("1")'>1</ion-button></ion-col>
+      <ion-col><ion-button expand="full" color="medium" (click)='concatenarNumero("2")'>2</ion-button></ion-col>
+      <ion-col><ion-button expand="full" color="medium" (click)='concatenarNumero("3")'>3</ion-button></ion-col>
+      <ion-col><ion-button expand="full" color="medium" (click)='generarOperacion("+")'>+</ion-button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><ion-button expand="full" color="medium" (click)='otrasOperaciones("+/-")'>+/-</ion-button></ion-col>
+      <ion-col><ion-button expand="full" color="medium" (click)='concatenarNumero("0")'>0</ion-button></ion-col>
+      <ion-col><ion-button expand="full" color="medium" (click)='otrasOperaciones(".")'>,</ion-button></ion-col>
+      <ion-col><ion-button expand="full" color="medium" (click)='generarOperacion("=")'>=</ion-button></ion-col>
+
+    </ion-row>
+  </ion-grid>
 </ion-content>

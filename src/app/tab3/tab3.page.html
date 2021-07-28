@@ -1,17 +1,64 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Productos
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<!---
+  <ion-list-header>
+    Usuarios de la aplicacion
+  </ion-list-header>
+  <ion-list *ngFor="let producto of listaProductos">
+    <ion-avatar slot="start">
+      <img src="https://cdn.pixabay.com/photo/2012/04/16/11/55/package-35664_640.png">
+    </ion-avatar>
+    <ion-label>
+      <h2>{{producto.nombre}}</h2>
+      <p>{{producto.precio}}</p>
+      </ion-label>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+
+  </ion-list>
+-->
+<ion-item>
+  <ion-label>ID</ion-label>
+  <ion-input type="text" disabled=true [value]='ix' ></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label>Nombre</ion-label>
+  <ion-input type="text" [(ngModel)]='nom'></ion-input>
+</ion-item>
+  <ion-item>
+  <ion-label>Descripcion</ion-label>
+  <ion-input type="text" [(ngModel)]='des' ></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label>Precio</ion-label>
+  <ion-input type="text" [(ngModel)]='prec'></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label>Stock</ion-label>
+  <ion-input type="text" [(ngModel)]='stock' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></ion-input>
+</ion-item>
+<ion-list style="text-align:center">
+  <ion-button expand="block" fill="clear" (click)="nuevoProducto()" >Guardar</ion-button>
+</ion-list>
+<ion-list-header>
+  Usuarios de la aplicacion
+</ion-list-header>
+<ion-list *ngFor="let producto of listaProductos">
+  <ion-avatar slot="start">
+    <img src="https://cdn.pixabay.com/photo/2012/04/16/11/55/package-35664_640.png">
+  </ion-avatar>
+  <ion-label>
+    <h2>Nombre: {{producto.nombre}}</h2>
+    <p>{{producto.descripcion}}</p>
+    <p>Precio: {{producto.precio}}</p>
+    <p>Disponibles: {{producto.stock}}</p>
+    </ion-label>
+</ion-list>
+
 </ion-content>
