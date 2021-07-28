@@ -1,17 +1,37 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-title>Galeria de fotos</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content>
+  <ion-card *ngIf="direccion">
+    <img [src]="getImgContent()" />
+    <ion-card-header>
+      <ion-card-subtitle>Fotografía</ion-card-subtitle>
+      <ion-card-title>Localización</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row>
+        <ion-label>Latitude: {{latitude}}</ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-label>Longitude: {{longitude}}</ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-label>Acurracy: {{acurracy}} </ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-label>Altitude: {{altitude}} </ion-label>
+      </ion-row>
+
+
+    </ion-card-content>
+  </ion-card>
 
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
     <ion-fab-button (click)="addPhotoToGallery()">
       <ion-icon name="camera"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-
 </ion-content>

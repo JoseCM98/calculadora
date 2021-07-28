@@ -19,12 +19,18 @@ export class PhotoService {
       saveToGallery: true
     });
   }
-  public async addNewToGallery() {
+  public async addNewToGallery()  {
     // Take a photo
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
-      quality: 100
+      quality: 100,
+      saveToGallery: true
     });
+
+
+
+    this.direccion = capturedPhoto.webPath;
+
   }
 }
